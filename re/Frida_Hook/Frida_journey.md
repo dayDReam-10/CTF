@@ -113,6 +113,8 @@ frida -U -f com.ad2001.frida0x1 -l ./Desktop/script.js
 
 ![broken](./Images/p8.png)
 
+finish!
+
 
 
 
