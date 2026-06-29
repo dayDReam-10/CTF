@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
+
+int main() {
+    unsigned char encoded[30] = {
+        0x55, 0x17, 0xC9, 0xBB, 0x4A, 0xA5, 0x86, 0xDF, 0x24, 0x0A,
+        0x1C, 0xA3, 0x27, 0xA1, 0x57, 0x35, 0xC3, 0xDB, 0x91, 0x88,
+        0x6D, 0x91, 0xA0, 0xCC, 0x71, 0x57, 0x71, 0xE4, 0x40
+    };
+    char original_input[30] = {0};
+
+    std::srand(0x7E8u);
+    for (int i = 0; i < 29; ++i) {
+        original_input[i] = encoded[i] ^ static_cast<unsigned char>(std::rand());
+    }
+    original_input[29] = '\0';
+
+    std::cout << original_input << std::endl;
+
+    return 0;
+}
