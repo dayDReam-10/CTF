@@ -115,6 +115,54 @@ frida -U -f com.ad2001.frida0x1 -l ./Desktop/script.js
 
 finish!
 
+### Solution2
+
+我们可以尝试hook`check()`函数如下:
+```js
+Java.perform(function() {
+  var a = Java.use("com.ad2001.frida0x1.MainActivity");
+  a.check.overload('int', 'int').implementation = function(a, b) {
+    this.check(4, 12);
+  }
+});
+```
+来达到目的
+
+### Homework of day 2
+
+打开Subjects下`Challenge2.apk`并用jadx反编译
+
+![broken](./Images/p9.png)
+
+这里不是在`OnCreate()`里,注意注入时机即可
+
+```js
+Java.perform(function(){
+    var t= Java.use("com.ad2001.frida0x2.MainActivity");
+    t.get_flag.implementation= function(a){
+        this.get_flag(4919);
+    }
+})
+```
+欸?不起作用?为什么呢？
+
+#### 分析
+
+这是因为`Java.perform`是被动的拦截，而这里的静态方法根本没人去调用，我们的脚本只能一直等......
+```js
+Java.perform(function(){
+    var t= Java.use("com.ad2001.frida0x2.MainActivity");
+    t.get_flag(4919);
+})
+```
+改成这样主动寻找一次`get_flag()`就行,`implementation`是拦截时替换，我们这里不用换直接输入参数就行
+
+![broken](./Images/p10.png)
+
+
+
+
+
 
 
 
