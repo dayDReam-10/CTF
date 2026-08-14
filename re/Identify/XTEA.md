@@ -1,13 +1,5 @@
 # XTEA
 
-## 算法介绍
-
-"XTEA" 的全称为"eXtended Tiny Encryption Algorithm"，是 TEA 的改进版本，同样由英国剑桥大学的 David Wheeler 和 Roger Needham 提出
-
-算是一种微型加密算法
-
-在安全学领域，XTEA（eXtended Tiny Encryption Algorithm）是一种分组加密算法，它的实现同样非常简单，通常只需要很精短的几行代码，但密钥调度和轮函数比 TEA 更安全
-
 ## 算法原理
 
 ### 1. 数据拆分

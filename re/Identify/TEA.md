@@ -1,13 +1,5 @@
 # TEA
 
-## 算法介绍
-
-"TEA" 的全称为"Tiny Encryption Algorithm" 是1994年由英国剑桥大学的David j.wheeler发明的
-
-算是一种微型加密算法
-
-在安全学领域，TEA（Tiny Encryption Algorithm）是一种分组加密算法，它的实现非常简单，通常只需要很精短的几行代码
-
 ## 算法原理
 
 ### 1. 数据拆分
