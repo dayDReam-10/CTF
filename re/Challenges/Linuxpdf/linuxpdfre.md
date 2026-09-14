@@ -36,11 +36,12 @@ qemu-riscv64 ./chal64  # 本地测试
 cd ..
 
 ```
+
 由于我的wsl2是x86_64，所以我更改了build.sh里面的`BITS`
 
 但是
-```bash
 
+```bash
 ./build.sh
 ```
 
