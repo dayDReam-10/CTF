@@ -100,15 +100,15 @@ rm -rf build/files
 
 ## 题解
 
-![alt text](image.png)
+![alt text](Images/image.png)
 
 阅读源代码知道embed_files.py将files经过zlib+base64后生成一个字典并替换了__files_data__
 
-![alt text](image-1.png)
+![alt text](Images/image-1.png)
 
 在file_template.js中又可以看见__files_data__被传入这里
 
-![alt text](image-2.png)
+![alt text](Images/image-2.png)
 
 在这里又可以看见将四个 JS 模块按顺序拼接成一个完整的文件，再将拼接好的 JavaScript 代码注入到一个 PDF 文件中，生成最终的 linux.pdf
 
@@ -226,7 +226,7 @@ if __name__ == "__main__":
 
 然后发现dump出来一堆东西怎么定位呢
 
-![alt text](image-3.png)
+![alt text](Images/image-3.png)
 
 细看左下角可以看到load了什么，直接对着找出来就行
 
