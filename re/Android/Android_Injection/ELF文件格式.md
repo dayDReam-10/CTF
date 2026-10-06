@@ -498,6 +498,11 @@ Elf64_Rela r = {
 /* 延迟绑定用，第一次调用函数时才处理 */
 /* 由 DT_JMPREL 指向 */
 
+/* 比如你 call printf@plt */
+/* PLT 跳到 GOT[printf] */
+/* GOT[printf] 里的值由 .rela.plt 填 */
+/* 填的是 libc 里 printf 的真实地址 */
+
 typedef struct {
     Elf64_Addr r_offset;   /* .got.plt 里某个槽的地址 */
     uint64_t   r_info;     
